@@ -41,7 +41,7 @@ function playRevealSequence() {
                 playBtn.disabled = false;
                 showToast('Reveal Complete!', 'All seeds have been revealed!', 'success');
             }
-        }, 1000 + index * 3800);
+        }, 2000 + index * 3400);
     });
 }
 
