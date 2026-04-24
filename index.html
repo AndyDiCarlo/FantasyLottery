@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deli 4 Prez Draft Lottery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="header-title">Deli 4 Prez</h1>
+            <p class="header-subtitle">&#127944; Draft Lottery &#127944;</p>
+            <div class="header-divider"></div>
+        </div>
+
+        <div class="content">
+            <div class="instructions">
+                Enter 6 names in order of ranking<br>
+                (Name 1 = Highest Odds)<br>
+            </div>
+
+            <div class="player-inputs">
+                <div class="player-entry">
+                    <label>Player 1:</label>
+                    <input type="text" id="player1" placeholder="Enter Name">
+                </div>
+                <div class="player-entry">
+                    <label>Player 2:</label>
+                    <input type="text" id="player2" placeholder="Enter Name">
+                </div>
+                <div class="player-entry">
+                    <label>Player 3:</label>
+                    <input type="text" id="player3" placeholder="Enter Name">
+                </div>
+                <div class="player-entry">
+                    <label>Player 4:</label>
+                    <input type="text" id="player4" placeholder="Enter Name">
+                </div>
+                <div class="player-entry">
+                    <label>Player 5:</label>
+                    <input type="text" id="player5" placeholder="Enter Name">
+                </div>
+                <div class="player-entry">
+                    <label>Player 6:</label>
+                    <input type="text" id="player6" placeholder="Enter Name">
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button class="btn btn-generate" onclick="generateSeeds()">Generate Seeds</button>
+                <button class="btn btn-clear" onclick="clearAll()">Clear All</button>
+                <button class="btn btn-customize" onclick="openOddsEditor()">⚙️Customize Odds</button>
+            </div>
+
+            <!-- Play Reveal Button (hidden by default) -->
+            <div class="buttons">
+                <button class="btn btn-play" id="playRevealBtn" onclick="playRevealSequence()" style="display: none;">
+                    ▶️ Play Reveal
+                </button>
+            </div>
+
+            <div class="results" id="resultsContainer">
+                <h3>Seeding Results</h3>
+                <div class="results-item" id="seed1">Seed #1: ---</div>
+                <div class="results-item" id="seed2">Seed #2: ---</div>
+                <div class="results-item" id="seed3">Seed #3: ---</div>
+                <div class="results-item" id="seed4">Seed #4: ---</div>
+                <div class="results-item" id="seed5">Seed #5: ---</div>
+                <div class="results-item" id="seed6">Seed #6: ---</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Odds Editor Modal -->
+    <div class="modal" id="oddsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Customize Seeding Odds</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-instructions">
+                    Adjust the probability weights for each position and seed.<br>
+                    Higher weights = higher chances of getting that seed.<br>
+                    Total for each position doesn't need to equal 100.
+                </div>
+                <div class="odds-grid">
+                    <table class="odds-table" id="oddsTable">
+                        <thead>
+                            <tr>
+                                <th>Position</th>
+                                <th>Seed 1</th>
+                                <th>Seed 2</th>
+                                <th>Seed 3</th>
+                                <th>Seed 4</th>
+                                <th>Seed 5</th>
+                                <th>Seed 6</th>
+                            </tr>
+                        </thead>
+                        <tbody id="oddsTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-generate" onclick="saveOdds()">💾 Save Changes</button>
+                <button class="btn btn-customize" onclick="resetToDefault()">🔄 Reset to Default</button>
+                <button class="btn btn-clear" onclick="closeOddsEditor()">✖ Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- External Javascript Files -->
+    <script src="script.js"></script>
+    <script src="video-player.js"></script>
+</body>
+</html>
