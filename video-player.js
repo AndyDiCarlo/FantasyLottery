@@ -17,10 +17,8 @@ function playRevealSequence() {
         el.classList.remove('filled', 'revealed');
     }
 
-    // Go fullscreen on the results container
     const resultsContainer = document.getElementById('resultsContainer');
-    resultsContainer.classList.add('fullscreen-active');
-    resultsContainer.requestFullscreen().catch(() => {});
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
     // Play audio
     revealAudio = new Audio(AUDIO_PATH);
@@ -29,6 +27,13 @@ function playRevealSequence() {
     // Disable play button during reveal
     const playBtn = document.getElementById('playRevealBtn');
     playBtn.disabled = true;
+
+    if (isMobile) {
+        // On mobile: just reveal in the normal results box
+        resultsContainer.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        resultsContainer.requestFullscreen().catch(() => {});
+    }
 
     // Reveal seeds 6 → 1 with 3 second delays
     const revealOrder = [6, 5, 4, 3, 2, 1];
@@ -46,7 +51,7 @@ function playRevealSequence() {
     });
 }
 
-// Exit fullscreen when Escape is pressed or fullscreen changes
+// Apply/remove fullscreen-active class based on fullscreen state (desktop only)
 document.addEventListener('fullscreenchange', () => {
     const resultsContainer = document.getElementById('resultsContainer');
     if (document.fullscreenElement) {
