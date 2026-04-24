@@ -8,6 +8,7 @@ A browser-based fantasy draft lottery tool for 6 players. Assigns draft seeds us
 - Weighted probability system ensures higher-ranked players are more likely to get better seeds
 - Customizable odds via the ⚙️ Customize Odds editor
 - Animated reveal sequence (seeds revealed 6 → 1 with audio and fullscreen mode)
+- Use [Esc] to exit fullscreen mode of reveal
 
 ## Usage
 
