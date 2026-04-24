@@ -19,6 +19,7 @@ function playRevealSequence() {
 
     // Go fullscreen on the results container
     const resultsContainer = document.getElementById('resultsContainer');
+    resultsContainer.classList.add('fullscreen-active');
     resultsContainer.requestFullscreen().catch(() => {});
 
     // Play audio
