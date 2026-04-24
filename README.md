@@ -21,12 +21,12 @@ A browser-based fantasy draft lottery tool for 6 players. Assigns draft seeds us
 
 | Position | Seed 1 | Seed 2 | Seed 3 | Seed 4 | Seed 5 | Seed 6 |
 |----------|--------|--------|--------|--------|--------|--------|
-| 1 (Best) |   50   |   25   |   15   |    7   |    2   |    1   |
-| 2        |   25   |   35   |   20   |   12   |    6   |    2   |
-| 3        |   15   |   20   |   30   |   20   |   10   |    5   |
-| 4        |    7   |   12   |   20   |   30   |   20   |   11   |
-| 5        |    2   |    6   |   10   |   20   |   35   |   27   |
-| 6 (Worst)|    1   |    2   |    5   |   11   |   27   |   54   |
+| 1 (Best) | 30.8 | 25.5 | 19.7 | 13.6 | 7.6 | 2.7 |
+| 2        | 23.1 | 22.5 | 20.5 | 16.9 | 11.7 | 5.4 |
+| 3        | 16.9 | 18.1 | 19.2 | 19.1 | 16.5 | 10.3 |
+| 4        | 12.3 | 13.9 | 16.1 | 18.9 | 20.7 | 18.1 |
+| 5        | 9.2  | 10.8 | 13.1 | 16.7 | 22.3 | 27.9 |
+| 6 (Worst)| 7.7  | 9.2  | 11.3 | 14.9 | 21.3 | 35.6 |
 
 Weights are relative — they don't need to sum to 100. Use **Reset to Default** in the odds editor to restore these values.
 
