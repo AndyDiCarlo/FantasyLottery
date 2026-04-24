@@ -4,6 +4,16 @@ const AUDIO_PATH = 'audio/reveal.mp3';
 
 let revealAudio = null;
 
+function showResultsNow() {
+    if (!currentSeedingResults) return;
+    for (let seed = 1; seed <= 6; seed++) {
+        const el = document.getElementById(`seed${seed}`);
+        el.textContent = `Seed #${seed}: ${currentSeedingResults[seed]}`;
+        el.classList.add('filled', 'revealed');
+    }
+    document.getElementById('resultsContainer').scrollIntoView({ behavior: 'smooth' });
+}
+
 function playRevealSequence() {
     if (!currentSeedingResults) {
         showToast('No Results', 'Please generate seeds first!', 'error');

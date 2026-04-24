@@ -79,6 +79,7 @@ function generateSeeds() {
 
     // Show play reveal button, hide results until revealed
     document.getElementById('playRevealBtn').style.display = 'block';
+    document.getElementById('showResultsBtn').style.display = 'block';
 
     // Reset all result items to hidden
     for (let seed = 1; seed <= 6; seed++) {
@@ -117,6 +118,7 @@ function clearAll() {
 
     // Hide play reveal button
     document.getElementById('playRevealBtn').style.display = 'none';
+    document.getElementById('showResultsBtn').style.display = 'none';
 
     currentSeedingResults = null;
 
